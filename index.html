@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Entrevistas de TripleTen</title>
+    <meta charset="utf-8" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap");
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .remark-slide-content {
+        font-family: "Open Sans", sans-serif;
+        font-size: 24px;
+        padding: 40px;
+      }
+
+      /* TripleTen branded background for separator slides */
+      .tripleten-highlight {
+        background-color: #FFCD73;
+        color: #1E1E1E;
+        font-weight: 600;
+      }
+
+      /* Default slide background */
+      .remark-slide-container {
+        background-color: #F7F7F7;
+        color: #1E1E1E;
+      }
+
+      /* Custom styling for bold text */
+      strong {
+        color: #FF8C00;
+        font-weight: 600;
+      }
+
+      /* Custom title colors */
+      h1, h2, h3, h4 {
+        font-weight: 600;
+      }
+
+      h1 {
+        color: #1E1E1E;
+        padding-bottom: 10px;
+        display: inline-block;
+      }
+
+      h2 {
+        color: #1E1E1E;
+        padding-left: 15px;
+      }
+
+      /* Specific styles for code to match the overall theme */
+      .remark-code, .remark-inline-code {
+        font-family: "Open Sans", monospace;
+        background-color: #EAEAEA;
+        color: #1E1E1E;
+        padding: 2px 4px;
+        border-radius: 4px;
+      }
+
+      /* Table styles */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+      }
+
+      th {
+        background-color: #FF8C00;
+        color: white;
+        padding: 10px;
+        text-align: left;
+      }
+
+      td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      /* Custom list styling */
+      ul {
+        list-style-type: none;
+        padding-left: 20px;
+      }
+
+      ul li {
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 10px;
+      }
+
+      ul li:before {
+        content: "✓";
+        color: #FF8C00;
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+      class: center, middle, tripleten-highlight
+
+      # Entrevistas de TripleTen 🚀
+      ## Tutores, Instructores y Revisores para Data Science y Data Analytics
+      
+      ---
+      name: sobre_tripleten
+      ## 🏫 Habilidades Clave
+
+      En los siguientes escenarios, queremos que te pongas en el rol de un tutor o instructor. Imagina que estás guiándonos como estudiantes en nuestro proceso de aprendizaje.
+
+      - **Habilidades pedagógicas:** Explica conceptos complejos de forma clara y accesible, como si estuvieras enseñándonos por primera vez.
+      - **Comunicación técnica:** Transmite tus conocimientos con confianza y precisión, asegurándote de que entendamos cada paso.
+      - **Adaptabilidad:** Responde a nuestras preguntas y necesidades como estudiantes, ajustando tu enfoque según sea necesario.
+
+
+      
+      ---
+      name: escenario_python
+      ## 🐍 Escenario 1: Explicando Listas en Python
+      
+      👨‍🎓 **Un estudiante pregunta:** *"¿Qué es una lista en Python?"*
+      
+      👨‍🏫 **Respuesta ideal:**
+      
+      1️⃣ **Definición simple:** Una lista es ...
+      
+      2️⃣ **Sintaxis básica:** Se crea con corchetes `[]` y sus metodos son...
+      
+      3️⃣ **¿Por qué usarlas?** Para ...
+      
+
+      
+      ---
+      name: escenario_groupby
+      ## 📊 Escenario 2: Debugging de `groupby`
+      
+      👨‍🎓 **Un estudiante dice:** *"No sé qué pasa con este código."*
+      
+      ```python
+      import pandas
+      
+      data = {
+          'Nombre': ['Ana', 'Juan', 'Ana', 'Juan', 'Ana', 'Juan'],
+          'Edad': [25, 30, 25, 30, 25, 30],
+          'Puntuacion': [85, 90, 95, 88, 92, 89]
+      }
+      
+      df = pd.DataFrame(data)
+      
+      grupo = df.groupby()
+      promedios = grupo.mean()
+      
+      print(promedios)
+      ```
+      
+      🔍 **¿Cómo ayudarías al estudiante?**
+      
+      ---
+      name: solucion_groupby
+      ## 🛠️ Solución al Problema de `groupby`
+      
+      📌 **Identificación del error:**
+      - La función `groupby()` necesita al menos una columna como argumento.
+      - Esta función agrupa datos basados en valores únicos de la columna especificada.
+      
+      🔧 **Código corregido:**
+      ```python
+      # Corrección - especificamos la columna 'Nombre'
+      grupo = df.groupby('Nombre')
+      promedios = grupo.mean()
+      
+      print(promedios)
+      ```
+
+      ---
+      name: evaluacion_modelo
+      ### 📈 Escenario 3: Evaluación de Modelos
+      👨‍🎓 **Un estudiante dice:** *"Podrías ayudarme a revisar este modelo de regresión."*
+      
+      <table>
+        <thead>
+          <tr>
+            <th>Categoria1</th>
+            <th>Categoria2</th>
+            <th>Categoria3</th>
+            <th>Variable Continua</th>
+            <th>Target</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>A</td>
+            <td>X</td>
+            <td>M</td>
+            <td>12.5</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>B</td>
+            <td>Y</td>
+            <td>N</td>
+            <td>8.3</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>A</td>
+            <td>Z</td>
+            <td>O</td>
+            <td>15.7</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>C</td>
+            <td>X</td>
+            <td>M</td>
+            <td>9.8</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>B</td>
+            <td>Y</td>
+            <td>N</td>
+            <td>11.2</td>
+            <td>1</td>
+          </tr>
+        </tbody>
+      </table>
+      ---
+      name: problemas_codigo
+      - 🔍 **Verifica la definición del modelo** 
+      - 🛠️ **Revisa las variables** 
+      - 📊 **Evalúa el modelo** 
+      - ✂️ **División de datos correcta**   
+
+      ```python
+      # Suponemos que el DataFrame df ya está definido y las librerias pandas y logistic regression, tambien sklearn y train_test_split
+      corr = df.corr()
+      selected_features = corr['Categoria1', 'Categoria2', 'Categoria3', 'Variable Continua'] > 0.1
+      X = df[selected_features]
+      y = df['target']
+      
+      # Split and scale
+      scaler = StandardScaler()
+      X_scaled = scaler.fit_transform(X)
+      Y_scaled = scaler.transform(y)
+      X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+      
+      from sklearn.preprocessing import StandardScaler
+      model = LogisticRegression()
+      model.fit(X_train_scaled, y_train)
+      preds = model.predict(X_test_scaled)
+      print("RMSE:", mean_squared_error(y_test, preds)**0.5)
+      ```
+      
+      ---
+      name: problemas_codigo
+      ## 🐞 Problemas en el Código
+      
+      📌 **Errores identificados:**
+      
+      1️⃣ **Selección de características inadecuada:**
+      - Usar correlación con target binario no es óptimo
+      - `selected_features` devuelve una serie booleana, no nombres de columnas
+      
+      2️⃣ **Métrica incorrecta:**
+      - RMSE para clasificación binaria es inapropiado
+      - Debería usar accuracy, precision, recall o F1-score
+      
+      3️⃣ **Modelo y evaluación:**
+      - LogisticRegression es para clasificación, no regresión
+      - La evaluación debería corresponder al tipo de problema
+      
+  
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+    <script>
+      var slideshow = remark.create({
+        ratio: "16:9",
+      });
+    </script>
+  </body>
+</html>
