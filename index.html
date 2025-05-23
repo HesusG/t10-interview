@@ -184,7 +184,7 @@
       ```python
       # Corrección - especificamos la columna 'Nombre'
       grupo = df.groupby('Nombre')
-      promedios = grupo.mean()
+      promedios = grupo["Punuacion"].mean()
       
       print(promedios)
       ```
